@@ -1,0 +1,35 @@
+#SWAGGER
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+# PRODUCT SERVICE ROOT
+api:
+  catalog:
+    baseurl: http://product-service
+
+#EUREKA
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8083/eureka/
+      initialInstanceInfoReplicationIntervalSeconds: 5
+      registryFetchIntervalSeconds: 5
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 5
+
+spring.application.name: order-service
+
+#ACTUATOR
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    health:
+      show-details: always
+
+
+
+
